@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+    <data>
+        <variable name="loginmodel" type="ga.bolehju.mvvmdua.viewmodel.LoginViewModel"/>
+        <variable name="presenter" type="ga.bolehju.mvvmdua.presenter.Presenter"/>
+    </data>
+
+    
+<LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center_vertical"
+              android:paddingHorizontal="20dp"
+              tools:context=".MainActivity">
+
+    <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={loginmodel.username}"
+    />
+
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:text="@={loginmodel.password}"
+    />
+
+    <Button
+            android:id="@+id/btnLogin"
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->presenter.logIn()}"
+    />
+
+</LinearLayout>
+</layout>
